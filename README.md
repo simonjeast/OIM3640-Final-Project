@@ -42,31 +42,31 @@ All of this runs locally at `http://127.0.0.1:5000`
 
 ## 2. User Instructions / How to Run
 
-### 2.1 Prerequisites
+### Prerequisites
 
 * Python 3.9+
 * A terminal (Command Prompt, PowerShell, or similar)
 * An OpenAI API key with access to the `gpt-5-nano` model
 
-### 2.2 Clone or Download the Repo
+### Clone or Download the Repo
 
 Download from my github (https://github.com/simonjeast/OIM3640-Final-Project/tree/main)
 
-### 2.3 Open Code
+### Open Code
 
 Open the code in VSCode (or another IDE) through github
 
-### 2.4 Install Dependencies
+### Install Dependencies
 
 Make sure all necessary packages are installed (Flask, OpenAI, Python, etc)
 
-### 2.5 Set Up Your API Key
+### Set Up Your API Key
 
 Create a file named `.env` in the project root:
 
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxx
 
-### 2.6 Run the App
+### Run the App
 
 You should see output similar to:
 
@@ -78,7 +78,7 @@ http://127.0.0.1:5000/
 
 You will see the BabsonGPT interface.
 
-### 2.7 Basic Usage
+### Basic Usage
 
 * Type a message in the input box ("Message BabsonGPT…").
 * Press **Send** or hit **Enter** (Shift+Enter for a newline).
@@ -94,7 +94,7 @@ Chats are saved **locally** in your browser using `localStorage`. They persist a
 
 This section describes the system at an architectural level
 
-### 3.1 High-Level Architecture
+### High-Level Architecture
 
 BabsonGPT is a classic small web app:
 
@@ -123,7 +123,7 @@ Browser (HTML/CSS/JS)  <--HTTP-->  Flask (app.py)  <--API-->  OpenAI
   localStorage                    .env / OPENAI_API_KEY
 ```
 
-### 3.2 Backend: `app.py`
+### Backend: `app.py`
 
 Key pieces:
 
@@ -142,7 +142,7 @@ Key pieces:
 
   * Catches exceptions and sends back an error JSON
 
-### 3.3 Frontend: `index.html` and `style.css`
+### Frontend: `index.html` and `style.css`
 
 **Layout**
 
@@ -215,7 +215,7 @@ Key pieces:
   * Switches `activeChatId` to that chat.
   * Re-renders the main chat log with its messages.
 
-### 3.4 Design Decisions
+### Design Decisions
 
 Some explicit choices:
 
@@ -231,14 +231,14 @@ Some explicit choices:
 
 ## 4. Results & Capabilities
 
-### 4.1 What BabsonGPT Can Do
+### What BabsonGPT Can Do
 
 * Hold **multi-turn conversations** with context, similar to ChatGPT.
 * Save multiple chats and let you switch between them in the **Recent** sidebar.
 * Maintain a visually clean, ChatGPT-like interface using Babson’s green as the primary color.
 * Run entirely on **localhost**, with only the model calls going over the network to OpenAI.
 
-### 4.2 Example Interactions
+### Example Interactions
 
 A few example prompts:
 
@@ -259,7 +259,7 @@ A few example prompts:
 
 These conversations remain accessible in the sidebar until the user clears browser storage.
 
-### 4.3 Limitations
+### imitations
 
 * BabsonGPT depends on internet access and a valid API key.
 * It is unrelated to Babson College, they may be mad at me for using their branding. 
